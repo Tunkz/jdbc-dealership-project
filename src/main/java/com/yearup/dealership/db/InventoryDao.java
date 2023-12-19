@@ -26,8 +26,8 @@ public class InventoryDao {
             try (ResultSet generatedKeys = statement.getGeneratedKeys()) {
                 if (generatedKeys.next()) {
                     int dealership = generatedKeys.getInt(1);
-                    String vehicleid = generatedKeys.getString(2);
-                    System.out.println("Vehicle with vin: "+vehicleid+" added to the dealership with id: "+dealership);
+                    String vehicleID = generatedKeys.getString(2);
+                    System.out.println("The Vehicle with vin: "+ vehicleID + " was added to the dealership with id: " + dealership);
                 }
             }
         } catch (SQLException e) {

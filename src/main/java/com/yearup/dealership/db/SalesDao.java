@@ -15,7 +15,6 @@ public class SalesDao {
     }
 
     public void addSalesContract(SalesContract salesContract) {
-        // TODO: Implement the logic to add a sales contract
         String query = "INSERT INTO sales_contract VALUES (?, ?, ?, ?);";
         try(Connection connection = dataSource.getConnection();
             PreparedStatement statement = connection.prepareStatement(query)){
@@ -26,8 +25,8 @@ public class SalesDao {
             statement.setDouble(5, salesContract.getPrice());
 
             int rows = statement.executeUpdate();
-            System.out.println("\nSales Contract added.");
-            System.out.println("Rows updated: " + rows);
+            System.out.println("\nSales Contract added!.");
+            System.out.println("Rows updated : " + rows);
 
         } catch (SQLException e){
             e.printStackTrace();
